@@ -1,13 +1,16 @@
 package Jogador;
 
 public class Jogador {
-
-    private int jogada;
+    private String simbolo;
     public Jogador(){
-        this.jogada=0;
+        this.simbolo="";
     }
 
-    public void setJogada(int valor){
+    public void setSimbolo(String simbolo){
+        this.simbolo = simbolo;
+    }
 
+    public String getSimbolo(){
+        return this.simbolo;
     }
 }

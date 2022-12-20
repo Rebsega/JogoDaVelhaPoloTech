@@ -1,8 +1,14 @@
 import Tabuleiro.Tabuleiro;
 
 public class Principal {
+    private final static Tabuleiro tabuleiro = new Tabuleiro();
     public static void main(String[] args) {
-        Tabuleiro tabuleiro = new Tabuleiro();
-        tabuleiro.mostraTabuleiro();
+        Jogo();
+    }
+
+    private static void Jogo(){
+        while(!tabuleiro.validaFimJogo()){
+            tabuleiro.printaTabuleiro();
+        }
     }
 }
