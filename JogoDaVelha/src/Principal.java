@@ -10,5 +10,6 @@ public class Principal {
         while(!tabuleiro.validaFimJogo()){
             tabuleiro.printaTabuleiro();
         }
+
     }
 }
