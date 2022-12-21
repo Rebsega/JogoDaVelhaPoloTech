@@ -79,13 +79,6 @@ public class Tabuleiro extends Jogador {
     }
 
     public boolean validaFimJogo(){
-        /*matrizTabuleiro[0][0].equals(matrizTabuleiro[0][1]) && matrizTabuleiro[0][1].equals(matrizTabuleiro[0][2]) && !matrizTabuleiro[0][0].equals("") ||
-                matrizTabuleiro[1][0].equals(matrizTabuleiro[1][1]) && matrizTabuleiro[1][1].equals(matrizTabuleiro[1][2]) && !matrizTabuleiro[1][0].equals("") ||
-                matrizTabuleiro[2][0].equals(matrizTabuleiro[2][1]) && matrizTabuleiro[2][1].equals(matrizTabuleiro[2][2]) && !matrizTabuleiro[2][0].equals("") ||
-                matrizTabuleiro[0][0].equals(matrizTabuleiro[1][0]) && matrizTabuleiro[1][0].equals(matrizTabuleiro[2][0]) && !matrizTabuleiro[0][0].equals("") ||
-                matrizTabuleiro[0][1].equals(matrizTabuleiro[1][1]) && matrizTabuleiro[1][1].equals(matrizTabuleiro[2][1]) && !matrizTabuleiro[0][1].equals("")
-        {*/
-
         if(validaColuna() || validaLinha() || validaDiagonal()){
             System.out.println("Jogador " + jogadorAtual.getSimbolo() + " venceu!");
             fimJogo = true;
@@ -153,23 +146,19 @@ public class Tabuleiro extends Jogador {
 
     public boolean validaDiagonal() {
         int i=0,j=0;
-        if (((Objects.equals(matrizTabuleiro[0][0], matrizTabuleiro[1][1]) &&
-            Objects.equals(matrizTabuleiro[1][1], matrizTabuleiro[2][2])) &&
+        return ((Objects.equals(matrizTabuleiro[0][0], matrizTabuleiro[1][1]) &&
+                Objects.equals(matrizTabuleiro[1][1], matrizTabuleiro[2][2])) &&
 
-            (!Objects.equals(matrizTabuleiro[0][0], "") &&
-            !Objects.equals(matrizTabuleiro[1][1], "") &&
-            !Objects.equals(matrizTabuleiro[2][2], ""))) ||
+                (!Objects.equals(matrizTabuleiro[0][0], "") &&
+                        !Objects.equals(matrizTabuleiro[1][1], "") &&
+                        !Objects.equals(matrizTabuleiro[2][2], ""))) ||
 
-            ((Objects.equals(matrizTabuleiro[0][2], matrizTabuleiro[1][1]) &&
-            Objects.equals(matrizTabuleiro[1][1], matrizTabuleiro[2][0])) &&
+                ((Objects.equals(matrizTabuleiro[0][2], matrizTabuleiro[1][1]) &&
+                        Objects.equals(matrizTabuleiro[1][1], matrizTabuleiro[2][0])) &&
 
-            (!Objects.equals(matrizTabuleiro[0][2], "") &&
-            !Objects.equals(matrizTabuleiro[1][1], "") &&
-            !Objects.equals(matrizTabuleiro[2][0], "")))
-        ) {
-            return true;
-        }
-        return false;
+                        (!Objects.equals(matrizTabuleiro[0][2], "") &&
+                                !Objects.equals(matrizTabuleiro[1][1], "") &&
+                                !Objects.equals(matrizTabuleiro[2][0], "")));
     }
 
     public void setPosicao(int linha, int coluna) {
